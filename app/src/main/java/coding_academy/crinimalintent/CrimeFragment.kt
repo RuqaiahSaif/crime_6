@@ -116,6 +116,7 @@ private const val DATE_FORMAT = "EEE, MMM, dd"
                      crime.phone_number = phone_number
                      crimeDetailViewModel.saveCrime(crime)
                      suspectButton.text = suspect
+                  phoneButton.text = phone_number
                  }
              }
          }
@@ -220,8 +221,7 @@ private const val DATE_FORMAT = "EEE, MMM, dd"
              }
          }
          phoneButton.setOnClickListener  {
-             val number = crime.phone_number
-             phoneButton.text = number
+             val number = crime.phone_number        
              val call = Uri.parse("tel:$number")
              val surf = Intent(Intent.ACTION_DIAL, call)
              startActivity(surf)
